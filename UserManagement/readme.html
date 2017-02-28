@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>User Management Using Entity Framework</title>
+</head>
+<body>
+
+    <h1 id="user-management-using-entity-framework">User Management Using Entity Framework</h1>
+<ol>
+<li><p>Setup Data</p>
+<ol>
+<li>Add database <img src="./ReadMeFiles/AddDB.png" alt="Add DB" /></li>
+<li>Add user Table <img src="./ReadMeFiles/AddUserTable.png" alt="Add User" /></li>
+<li>Add Entity Framework Model
+<ol>
+<li>Add EF Model<img src="./ReadMeFiles/AddEFModel.png" alt="" /></li>
+<li>Select Model Type<img src="./ReadMeFiles/AddEFModel-2.png" alt="" /></li>
+<li>Select DB objects to include in model<img src="./ReadMeFiles/AddEFModel-3.png" alt="" /></li>
+</ol>
+</li>
+<li>Build Project (Ctrl+Shift+B)</li>
+</ol>
+</li>
+<li><p>GUI</p>
+<ol>
+<li>Add datasource
+<ol>
+<li><img src="./ReadMeFiles/AddDatasource.png" alt="" /></li>
+<li><img src="./ReadMeFiles/AddDatasource-2.png" alt="" /></li>
+<li><img src="./ReadMeFiles/AddDatasource-3.png" alt="" /></li>
+</ol>
+</li>
+<li>Drag datasource to form</li>
+<li>Dock grid in form</li>
+<li>Edit columns to make grid have desired columns and properties</li>
+</ol>
+</li>
+<li><p>Code</p>
+<ol>
+<li>Alter User class to provide defaults when instane is created</li>
+<li>Build Project (Ctrl+Shift+B)</li>
+<li>Delete all tables in project db</li>
+<li>Set users.mdf Copy to Output Directory property to Copy if newer</li>
+<li>Delete Users.mdf and Users.ldf in bin/debug</li>
+<li>Open Package Manager Console <img src="./ReadMeFiles/PackageManager.png" alt="" /></li>
+<li>Run Enable-Migrations</li>
+<li>Run Add-Migration &quot;Add User table&quot;</li>
+<li>Run update-database</li>
+<li>Code form functionality</li>
+<li>Repeat 5 and 6 each time you alter your code first classes.  If you add another DBContext you will need to adjust the update-database command. It will tell you what you need to do.</li>
+</ol>
+</li>
+</ol>
+
+
+</body>
+</html>
