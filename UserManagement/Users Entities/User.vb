@@ -29,6 +29,10 @@ Partial Public Class User
     <Display(Name:="Email Address")>
     Public Property EmailAddress As String = ""
 
+    <Display(Name:="Active")>
+    <Required>
+    Property IsActive As Boolean = True
+
     Private Function GenerateSalt() As Byte()
         Dim tmp(63) As Byte
         tmp.FillRandom
@@ -45,6 +49,7 @@ Partial Public Class User
     Public Overrides Function ToString() As String
         Return $"User Name:{UserName}
 Email:{EmailAddress}
+Active:{IsActive}
 Password Hash:
 {Password.ToHex}
 Salt:

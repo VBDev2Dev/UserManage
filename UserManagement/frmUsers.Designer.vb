@@ -27,7 +27,6 @@ Partial Class frmUsers
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.UserBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.UserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
@@ -40,14 +39,16 @@ Partial Class frmUsers
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.UserBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.UserDataGridView = New System.Windows.Forms.DataGridView()
+        Me.UserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.dgvcID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvcEmail = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvcUserName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvcPassword = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IsActive = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         CType(Me.UserBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UserBindingNavigator.SuspendLayout()
-        CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UserBindingNavigator
@@ -76,10 +77,6 @@ Partial Class frmUsers
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
         Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'UserBindingSource
-        '
-        Me.UserBindingSource.DataSource = GetType(UserManagement.User)
         '
         'BindingNavigatorCountItem
         '
@@ -170,13 +167,17 @@ Partial Class frmUsers
         '
         Me.UserDataGridView.AutoGenerateColumns = False
         Me.UserDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.UserDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgvcID, Me.dgvcEmail, Me.dgvcUserName, Me.dgvcPassword})
+        Me.UserDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgvcID, Me.dgvcEmail, Me.dgvcUserName, Me.dgvcPassword, Me.IsActive})
         Me.UserDataGridView.DataSource = Me.UserBindingSource
         Me.UserDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UserDataGridView.Location = New System.Drawing.Point(0, 25)
         Me.UserDataGridView.Name = "UserDataGridView"
         Me.UserDataGridView.Size = New System.Drawing.Size(571, 357)
         Me.UserDataGridView.TabIndex = 1
+        '
+        'UserBindingSource
+        '
+        Me.UserBindingSource.DataSource = GetType(UserManagement.User)
         '
         'dgvcID
         '
@@ -207,6 +208,12 @@ Partial Class frmUsers
         Me.dgvcPassword.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvcPassword.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
+        'IsActive
+        '
+        Me.IsActive.DataPropertyName = "IsActive"
+        Me.IsActive.HeaderText = "Active"
+        Me.IsActive.Name = "IsActive"
+        '
         'frmUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -219,8 +226,8 @@ Partial Class frmUsers
         CType(Me.UserBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UserBindingNavigator.ResumeLayout(False)
         Me.UserBindingNavigator.PerformLayout()
-        CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -245,4 +252,5 @@ Partial Class frmUsers
     Friend WithEvents dgvcEmail As DataGridViewTextBoxColumn
     Friend WithEvents dgvcUserName As DataGridViewTextBoxColumn
     Friend WithEvents dgvcPassword As DataGridViewTextBoxColumn
+    Friend WithEvents IsActive As DataGridViewCheckBoxColumn
 End Class

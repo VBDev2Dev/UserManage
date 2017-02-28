@@ -27,7 +27,8 @@ Namespace Migrations
             context.Users.AddOrUpdate(New User With {
                                       .Id = 1,
                                       .EmailAddress = "jsmith@123.com",
-                                      .UserName = "jsmith"})
+                                      .UserName = "jsmith",
+                                      .IsActive = True})
         End Sub
 
     End Class

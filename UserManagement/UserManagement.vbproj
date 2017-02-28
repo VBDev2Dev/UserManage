@@ -110,6 +110,10 @@
       <DependentUpon>201702280511016_Add User table.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201702280511016_Add User table.vb" />
+    <Compile Include="Migrations\201702281505130_Add IsActive property to allow user lockout.Designer.vb">
+      <DependentUpon>201702281505130_Add IsActive property to allow user lockout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702281505130_Add IsActive property to allow user lockout.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -135,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702280511016_Add User table.resx">
       <DependentUpon>201702280511016_Add User table.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702281505130_Add IsActive property to allow user lockout.resx">
+      <DependentUpon>201702281505130_Add IsActive property to allow user lockout.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
